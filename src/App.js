@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import AddBucket from "./components/AddBucket";
+import HistoryCard from "./components/HistoryCard";
+import DemoLinks from "./components/DemoLinks";
+import AddCard from "./components/AddCard";
+import { Provider } from "react-redux";
+import store from "./components/store";
+import Body from "./components/Body";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="px-10">
+      <Provider store={store}>
+        <DemoLinks />
+        <AddBucket />
+        <AddCard />
+        <Body />
+        <HistoryCard />
+      </Provider>
     </div>
   );
-}
+};
 
 export default App;
